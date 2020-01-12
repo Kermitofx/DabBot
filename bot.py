@@ -27,7 +27,7 @@ def start(bot, update):
 
 def music(bot, update):
     title, video_url = search(update.message.text)
-    bot.sendMessage(update.message.chat_id, text="Pedido Recebido... Baixando:" + title)
+    bot.sendMessage(update.message.chat_id, text="Pedido Recebido... \nBaixando:" + title)
     session = Session(bind=ENGINE)
     session.add(Backup(title=title, video_url=video_url))
     session.commit()
